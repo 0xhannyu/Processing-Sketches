@@ -12,11 +12,10 @@ void setup() {
 void draw() {
   background(0);
   image(img, 0, 0); // Display the original image
-
-  // Create a new image for the edge magnitude
-  PImage sobelImage = createImage(img.width, img.height, RGB);PImage edgeDirection = createImage(img.width, img.height, RGB);
-
-  // Apply Sobel filtering (nested loops)
+  
+  PImage sobelImage = createImage(img.width, img.height, RGB); // Stores the Sobel Filter image
+  PImage edgeDirection = createImage(img.width, img.height, RGB); // Stores the gradient direction image
+  
   for (int y = 1; y < img.height - 1; y++) {
     for (int x = 1; x < img.width - 1; x++) {
       float GxSum = 0, GySum = 0;
